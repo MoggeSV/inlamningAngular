@@ -1,0 +1,14 @@
+<form  [formGroup]="registerForm" (ngSubmit)="register()">
+
+  <input type="text" formControlName="firstname" placeholder="First Name"><br>
+  <input type="text" formControlName="lastname" placeholder="Last Name"><br>
+  <input type="text" formControlName="addressline" placeholder="Email address"><br>
+  <input type="text" formControlName="zipcode" placeholder="Zip Code"><br>
+  <input type="text" formControlName="city" placeholder="City"><br>
+
+  <input type="text" formControlName="email" placeholder="Email address"><br>
+  <input type="password" formControlName="password" placeholder="Password"><br>
+  <br><br>
+  <input type="submit" value="Register">
+
+</form>
