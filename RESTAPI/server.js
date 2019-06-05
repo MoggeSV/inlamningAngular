@@ -4,7 +4,7 @@ const app = require('./app.js');
 const webserver_port = process.env.WEB_SERVER_PORT || 3001;
 const mongodbserver = process.env.MONGODB_SERVER_NAME || "mongodb://localhost";
 const mongodbserver_port = process.env.MONGODB_SERVER_PORT || 27017;
-const mongodbserver_db = process.env.MONGODB_SERVER_DB || "default";
+const mongodbserver_db = process.env.MONGODB_SERVER_DB || "angular";
 
 const webserver_address =  "http://localhost:" + webserver_port;
 const mongodb_address = mongodbserver + ":" + mongodbserver_port + "/" + mongodbserver_db;

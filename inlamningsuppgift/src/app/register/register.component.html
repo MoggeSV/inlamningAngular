@@ -1,14 +1,81 @@
-<form  [formGroup]="registerForm" (ngSubmit)="register()">
+<div class="container mt-5 mb-5">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
 
-  <input type="text" formControlName="firstname" placeholder="First Name"><br>
-  <input type="text" formControlName="lastname" placeholder="Last Name"><br>
-  <input type="text" formControlName="addressline" placeholder="Email address"><br>
-  <input type="text" formControlName="zipcode" placeholder="Zip Code"><br>
-  <input type="text" formControlName="city" placeholder="City"><br>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="firstname">Firstname</label>
+              <input type="text" formControlName="firstname" class="form-control" id="firstname">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="middlename">Middlename</label>
+              <input type="text" formControlName="middlename" class="form-control" id="middlename">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="lastname">Lastname</label>
+              <input formControlName="lastname" type="text" class="form-control" id="lastname">
+            </div>
 
-  <input type="text" formControlName="email" placeholder="Email address"><br>
-  <input type="password" formControlName="password" placeholder="Password"><br>
-  <br><br>
-  <input type="submit" value="Register">
-
-</form>
+            <div class="form-group col-md-12">
+              <label for="birthday">Birthday</label>
+              <input formControlName="birthday" type="text" class="form-control" id="birthday">
+            </div>
+          </div>
+    <hr>
+      
+    
+      <div class="form-group">
+        <label for="postaladdressline">Postal Address</label>
+        <input formControlName="postal_addressline" type="text" class="form-control" id="postaladdressline">
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="postalcity">Postal City</label>
+          <input formControlName="postal_city" type="text" class="form-control" id="postalcity">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="postalzip">Postal Zipcode</label>
+          <input formControlName="postal_zipcode" type="text" class="form-control" id="postalzip">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="postalcountry">Postal Country</label>
+          <input formControlName="postal_country" type="text" class="form-control" id="postalcountry">
+        </div>
+      </div>
+      
+<hr>
+      <div class="form-group">
+        <label for="billingaddressline">Billing Address</label>
+        <input formControlName="billing_addressline" type="text" class="form-control" id="billingaddressline">
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="billingcity">Billing City</label>
+          <input formControlName="billing_city" type="text" class="form-control" id="billingcity">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="billingzip">Billing Zipcode</label>
+          <input formControlName="billing_zipcode" type="text" class="form-control" id="billingzip">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="billingcountry">Billing Country</label>
+          <input formControlName="billing_country" type="text" class="form-control" id="billingcountry">
+        </div>
+      </div>
+    <hr>
+      <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input formControlName="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <input formControlName="password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
+          </div>
+        </div>
+    
+      <button [disabled]="!registerForm.valid" type="submit" class="btn btn-primary">Register</button>
+    </form>
+    
+</div>

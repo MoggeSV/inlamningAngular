@@ -35,10 +35,20 @@ exports.register = function(req, res) {
 
                                 _id:            new db.Types.ObjectId,
                                 firstname:      req.body.firstname,
+                                middlename:     req.body.middlename,
                                 lastname:       req.body.lastname,
-                                addressline:    req.body.addressline,
-                                zipcode:        req.body.zipcode,
-                                city:           req.body.city,
+                                birthday:       req.body.birthday,
+
+                                postal_addressline:    req.body.postal_addressline,
+                                postal_zipcode:        req.body.postal_zipcode,
+                                postal_city:           req.body.postal_city,
+                                postal_country:        req.body.postal_country,
+
+                                billing_addressline:    req.body.billing_addressline,
+                                billing_zipcode:        req.body.billing_zipcode,
+                                billing_city:           req.body.billing_city,
+                                billing_country:        req.body.billing_country,
+
                                 email:          req.body.email,
                                 password:       hash
 
@@ -116,7 +126,84 @@ exports.login = function(req, res) {
 
 
 // restricted
-exports.getUsers = function(req, res) {}
-exports.getUser = function(req, res) {}
-exports.updateUser = function(req, res) {}
+exports.getUsers = function(req, res) {
+
+}
+exports.getUser = function(req, res) {
+    User.find({_id: req.params.id})
+    .then((data) => res.status(200).json(data))
+}
+exports.updateUser = function(req, res) {
+    if( 1 > 0 ) {
+        console.log(req.body.email);
+        encrypt.hash(req.body.password, 10, function(error, hash) {
+            if(error) {
+                return res.status(500).json({
+                    error: error,
+                    message: "Error | failed to encrypt password"
+                })
+            }
+            else {
+                console.log('Hej')
+                User
+                .updateOne({ _id:req.params.id },
+                {$set: {
+                    firstname:      req.body.firstname,
+                    middlename:     req.body.middlename,
+                    lastname:       req.body.lastname,
+                    birthday:       req.body.birthday,
+
+                    postal_addressline:    req.body.postal_addressline,
+                    postal_zipcode:        req.body.postal_zipcode,
+                    postal_city:           req.body.postal_city,
+                    postal_country:        req.body.postal_country,
+
+                    billing_addressline:    req.body.billing_addressline,
+                    billing_zipcode:        req.body.billing_zipcode,
+                    billing_city:           req.body.billing_city,
+                    billing_country:        req.body.billing_country,
+
+                    email:          req.body.email,
+                    password:       hash
+
+                }})
+                .then( result => {
+                    res.json({succes: true});
+                })
+                .catch(function(error, affected, resp) {
+                    console.log(error);
+                })
+            }
+        });
+    } else {
+        User
+        .updateOne({ _id:req.params.id },
+        {$set: {
+            firstname:      req.body.firstname,
+            middlename:     req.body.middlename,
+            lastname:       req.body.lastname,
+            birthday:       req.body.birthday,
+
+            postal_addressline:    req.body.postal_addressline,
+            postal_zipcode:        req.body.postal_zipcode,
+            postal_city:           req.body.postal_city,
+            postal_country:        req.body.postal_country,
+
+            billing_addressline:    req.body.billing_addressline,
+            billing_zipcode:        req.body.billing_zipcode,
+            billing_city:           req.body.billing_city,
+            billing_country:        req.body.billing_country,
+
+            email:          req.body.email
+            
+
+        }})
+        .then( result => {
+            res.json({succes: true});
+        })
+        .catch(function(error, affected, resp) {
+            console.log(error);
+        })
+    }
+}
 exports.deleteUser = function(req, res) {}

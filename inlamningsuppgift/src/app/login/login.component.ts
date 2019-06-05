@@ -36,6 +36,8 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("ACCESS_TOKEN", res["token"]);
       localStorage.setItem("USER_ID", res["id"]);
       localStorage.setItem("USER_EMAIL", res["email"]);
+      
+      
 
       if(res["success"]) {
         this.router.navigateByUrl('/account');

@@ -18,11 +18,8 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Contact</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="isLoggedIn = !isLoggedIn">Växla inloggning</a>
-      </li>
+      <div *ngIf="isLoggedIn(); then loggedin; else notloggedin"></div>
     </ul>
-    <div *ngIf="isLoggedIn; then loggedin; else notloggedin"></div>
   </div>
 
 </nav>
@@ -30,10 +27,14 @@
 <ng-template #loggedin>
   <ul class="navbar-nav my-2 my-lg-0">
     <li class="nav-item">
-      <a class="nav-link" routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Morgan Svensson</a>
+      <a class="nav-link" routerLink="/profile" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link"><i class="fas fa-sign-out-alt"></i></a>
+      <a class="nav-link">Profile </a>
+    </li>
+    
+    <li class="nav-item">
+      <a (click)="logout()" class="nav-link">Logout <i class="fas fa-sign-out-alt"></i></a>
     </li>
   </ul>
 
