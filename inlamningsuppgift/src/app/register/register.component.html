@@ -1,81 +1,112 @@
 <div class="container mt-5 mb-5">
+  <h5>Personal information</h5>
     <form [formGroup]="registerForm" (ngSubmit)="register()">
 
+        
+            <div class="form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    <input type="text" formControlName="firstname" class="form-control" id="firstname" placeholder="Firstname">
+                </div>  
+            </div>
+            <div class="form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    <input type="text" formControlName="middlename" class="form-control" id="middlename" placeholder="Middlename">
+                </div>  
+            </div>
+            <div class="form-group ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    <input type="text" formControlName="lastname" class="form-control" id="lastname" placeholder="Lastname">
+                </div>  
+            </div>
+        
+        <div class="form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-birthday-cake"></i></span>
+                <input type="text" formControlName="birthday" class="form-control" id="birthday" placeholder="Date of birth">
+            </div>  
+        </div>
+        <h5>Postal Address</h5>
+      
+    <div class="form-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+            <input type="text" formControlName="postal_addressline" class="form-control" id="postal_addressline" placeholder="Postal Address">
+        </div>  
+    </div>
+
+      <div class="form-row">
+          <div class="form-group col-md-4">
+              <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-globe-europe"></i></span>
+                  <input formControlName="postal_zipcode" type="text" class="form-control" id="postalzip" placeholder="Postal Zipcode">
+            </div>
+          </div>
+          <div class="form-group col-md-4">
+              <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-city"></i></span>
+                  <input formControlName="postal_city" type="text" class="form-control" id="postalcity" placeholder="Postal City">
+            </div>
+          </div>
+          <div class="form-group col-md-4">
+              <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-globe-europe"></i></span>
+                  <input formControlName="postal_country" type="text" class="form-control" id="postalcountry" placeholder="Postal Country">
+            </div>
+          </div>
+      </div>
+
+      <h5>Billing Address</h5>
+      <div class="form-group">
+          <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+              <input type="text" formControlName="billing_addressline" class="form-control" id="billing_addressline" placeholder="Billing Address">
+          </div>  
+      </div>
+  
         <div class="form-row">
             <div class="form-group col-md-4">
-              <label for="firstname">Firstname</label>
-              <input type="text" formControlName="firstname" class="form-control" id="firstname">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-globe-europe"></i></span>
+                    <input formControlName="billing_zipcode" type="text" class="form-control" id="billingzip" placeholder="Billing Zipcode">
+              </div>
             </div>
             <div class="form-group col-md-4">
-              <label for="middlename">Middlename</label>
-              <input type="text" formControlName="middlename" class="form-control" id="middlename">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-city"></i></span>
+                    <input formControlName="billing_city" type="text" class="form-control" id="billingcity" placeholder="Billing City">
+              </div>
             </div>
             <div class="form-group col-md-4">
-              <label for="lastname">Lastname</label>
-              <input formControlName="lastname" type="text" class="form-control" id="lastname">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-globe-europe"></i></span>
+                    <input formControlName="billing_country" type="text" class="form-control" id="billingcountry" placeholder="Billing Country">
+              </div>
             </div>
+        </div>
+      
 
-            <div class="form-group col-md-12">
-              <label for="birthday">Birthday</label>
-              <input formControlName="birthday" type="text" class="form-control" id="birthday">
+      <h5>User info</h5>
+    
+      <div class="form-row">
+          <div class="form-group col-md-6">
+              <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+            <input formControlName="email" type="email" class="form-control"  placeholder="Email">
             </div>
           </div>
-    <hr>
-      
-    
-      <div class="form-group">
-        <label for="postaladdressline">Postal Address</label>
-        <input formControlName="postal_addressline" type="text" class="form-control" id="postaladdressline">
-      </div>
-      
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="postalcity">Postal City</label>
-          <input formControlName="postal_city" type="text" class="form-control" id="postalcity">
-        </div>
-        <div class="form-group col-md-3">
-          <label for="postalzip">Postal Zipcode</label>
-          <input formControlName="postal_zipcode" type="text" class="form-control" id="postalzip">
-        </div>
-        <div class="form-group col-md-3">
-          <label for="postalcountry">Postal Country</label>
-          <input formControlName="postal_country" type="text" class="form-control" id="postalcountry">
-        </div>
-      </div>
-      
-<hr>
-      <div class="form-group">
-        <label for="billingaddressline">Billing Address</label>
-        <input formControlName="billing_addressline" type="text" class="form-control" id="billingaddressline">
-      </div>
-      
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="billingcity">Billing City</label>
-          <input formControlName="billing_city" type="text" class="form-control" id="billingcity">
-        </div>
-        <div class="form-group col-md-3">
-          <label for="billingzip">Billing Zipcode</label>
-          <input formControlName="billing_zipcode" type="text" class="form-control" id="billingzip">
-        </div>
-        <div class="form-group col-md-3">
-          <label for="billingcountry">Billing Country</label>
-          <input formControlName="billing_country" type="text" class="form-control" id="billingcountry">
-        </div>
-      </div>
-    <hr>
-      <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputEmail4">Email</label>
-            <input formControlName="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
+              <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-key"></i></span>
+            <input formControlName="password" type="password" class="form-control" placeholder="Password">
+            </div>
           </div>
-          <div class="form-group col-md-6">
-            <label for="inputPassword4">Password</label>
-            <input formControlName="password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
-          </div>
-        </div>
-    
-      <button [disabled]="!registerForm.valid" type="submit" class="btn btn-primary">Register</button>
+    </div>
+    <div class="form-group mb-5 mt-3">
+        <input type="submit" name="btn" value="Register" class="btn btn-outline-danger float-left login_btn">
+    </div>
     </form>
     
 </div>

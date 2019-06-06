@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  //firstname: string = localStorage.getItem('firstname');
+  firstname: string = localStorage.getItem('firstname');
+  lastname: string = localStorage.getItem('lastname');
   
     isLoggedIn(){
       
@@ -22,7 +23,7 @@ export class NavbarComponent implements OnInit {
       
     logout(){
       this.auth.logout();
-      this.router.navigateByUrl('/account');
+      this.router.navigateByUrl('/');
     }
     
   
@@ -30,6 +31,7 @@ export class NavbarComponent implements OnInit {
   constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
+    
   }
 
 }

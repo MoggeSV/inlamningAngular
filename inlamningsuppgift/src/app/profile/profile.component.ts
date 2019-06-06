@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { User } from '../user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +11,7 @@ import { User } from '../user';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) { }
+  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router) { }
 
   updateForm: FormGroup;
   user: User;
@@ -60,7 +61,7 @@ getInfo(){
     updateForm["email"].setValue(res[0].email);
     
      localStorage.setItem("firstname", res[0].firstname);
-    // localStorage.setItem("lastname", res["lastname"]);
+     localStorage.setItem("lastname", res[0].lastname);
     
 
 
@@ -77,6 +78,7 @@ getInfo(){
       if(success) {
         
         this.getInfo();
+        this.router.navigateByUrl('/');
       }
     })
   }
