@@ -54,7 +54,7 @@ input:focus{
     width: 100%;
     height: calc(2.25rem + 2px);
     padding: 0.375rem 0.75rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     color: #734B39;
     background-color: transparent;
@@ -82,3 +82,11 @@ input:focus{
     border-radius: 0;
 }
 
+input[type="checkbox"]{
+height: 20px;
+width: 20px;
+}
+
+#checkbox-text{
+    font-size: 1.2em;
+}

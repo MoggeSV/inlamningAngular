@@ -136,7 +136,7 @@ exports.getUser = function(req, res) {
     .then((data) => res.status(200).json(data))
 }
 exports.updateUser = function(req, res) {
-    if( 1 > 0 ) {
+    if( req.body.password.length > 0 ) {
         console.log(req.body.email);
         encrypt.hash(req.body.password, 10, function(error, hash) {
             if(error) {
@@ -169,7 +169,7 @@ exports.updateUser = function(req, res) {
                     password:       hash
 
                 }})
-                .then( result => {
+                .then( () => {
                     res.json({succes: true});
                 })
                 .catch(function(error, affected, resp) {
@@ -200,7 +200,7 @@ exports.updateUser = function(req, res) {
             
 
         }})
-        .then( result => {
+        .then( () => {
             res.json({succes: true});
         })
         .catch(function(error, affected, resp) {

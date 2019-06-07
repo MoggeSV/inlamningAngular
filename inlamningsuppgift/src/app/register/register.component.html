@@ -25,7 +25,7 @@
         <div class="form-group">
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-birthday-cake"></i></span>
-                <input type="text" formControlName="birthday" class="form-control" id="birthday" placeholder="Date of birth">
+                <input type="date" formControlName="birthday" class="form-control" id="birthday" placeholder="Date of birth">
             </div>  
         </div>
         <h5>Postal Address</h5>
@@ -57,8 +57,18 @@
             </div>
           </div>
       </div>
+            <h5>Billing Address</h5>
+            <div class="form-row">
+                <div class="form-group ml-1">
+                    <div id="checkbox-container">
+                        <input type="checkbox" name="cloning" id="cloning" (change)="cloneAddress()">
+                        <span for="cloning" class="inline" id="checkbox-text">  Check the box for same billing address as postal</span>
+                    </div>
+                </div>
+            </div>
+                    
 
-      <h5>Billing Address</h5>
+      
       <div class="form-group">
           <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
@@ -108,5 +118,4 @@
         <input type="submit" name="btn" value="Register" class="btn btn-outline-danger float-left login_btn">
     </div>
     </form>
-    
 </div>

@@ -79,6 +79,8 @@ getInfo(){
         
         this.getInfo();
         this.router.navigateByUrl('/');
+
+        
       }
     })
   }

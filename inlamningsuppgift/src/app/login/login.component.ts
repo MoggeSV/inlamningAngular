@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   isSubmitted: boolean = false;
-
+  errorMessage: string;
+  errorBool: boolean = false;
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -29,6 +30,8 @@ export class LoginComponent implements OnInit {
     this.isSubmitted = true;
 
     if(this.loginForm.invalid) {
+      this.errorBool = true;
+      this.errorMessage = 'Email and/or Password is incorrect'
       return;
     }
 

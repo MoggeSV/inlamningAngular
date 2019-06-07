@@ -1,4 +1,8 @@
+
+
+
 <div class="container mt-5 mb-5">
+    <h1 class="mb-5">Update your profile</h1>
     <h5>Personal information</h5>
       <form [formGroup]="updateForm" (ngSubmit)="updateInfo()">
   
@@ -25,7 +29,7 @@
           <div class="form-group">
               <div class="input-group-prepend">
                   <span class="input-group-text"><i class="fas fa-birthday-cake"></i></span>
-                  <input type="text" formControlName="birthday" class="form-control" id="birthday" placeholder="Date of birth">
+                  <input type="date" formControlName="birthday" class="form-control" id="birthday" placeholder="Date of birth">
               </div>  
           </div>
           <h5>Postal Address</h5>

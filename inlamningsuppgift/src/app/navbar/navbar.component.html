@@ -25,7 +25,8 @@
 </nav>
 
 <ng-template #loggedin>
-  <ul class="navbar-nav my-2 my-lg-0">
+  
+  
     <li class="nav-item">
       <a class="nav-link" routerLink="/account" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Account</a>
     </li>
@@ -40,19 +41,19 @@
     <li class="nav-item">
       <a (click)="logout()" class="nav-link">Logout <i class="fas fa-sign-out-alt"></i></a>
     </li>
-  </ul>
+  
 
 </ng-template>
 
 <ng-template #notloggedin>
-<ul class="navbar-nav my-2 my-lg-0">
+
   <li class="nav-item">
     <a class="nav-link" routerLink="/login" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" routerLink="/register" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Register</a>
   </li>
-</ul>
+
 </ng-template>
 
 

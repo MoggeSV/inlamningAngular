@@ -13,5 +13,4 @@ route.get("/:id", authorization, users.getUser);        // Get specific user
 route.put("/update/:id", users.updateUser);     // Update specific user
 route.delete("/:id", authorization, users.deleteUser);  // Remove specific user
 
-
 module.exports = route;

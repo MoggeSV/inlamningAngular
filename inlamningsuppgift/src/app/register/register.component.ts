@@ -41,6 +41,7 @@ export class RegisterComponent implements OnInit {
 
   get formControls() { return this.registerForm.controls }
 
+  
 
   register() {
     this.isSubmitted = true;
@@ -60,9 +61,32 @@ export class RegisterComponent implements OnInit {
           else {
             this.error = true;
             this.errorMessage = "Cant register user."
+            console.log(this.errorMessage);
+            
           }         
         })        
+      } else {
+        this.error = true;
+        this.errorMessage = "Cant register user."
+        console.log(this.errorMessage);
       }    
     })
+  }
+
+  cloneAddress() {
+    var isChecked = (<HTMLInputElement>document.getElementById("cloning")).checked;
+    const regForm = this.registerForm.controls;
+
+    if( isChecked ) {
+      regForm['billing_addressline'].setValue(regForm['postal_addressline'].value);
+      regForm['billing_zipcode'].setValue(regForm['postal_zipcode'].value);
+      regForm['billing_city'].setValue(regForm['postal_city'].value);
+      regForm['billing_country'].setValue(regForm['postal_country'].value);
+    } else {
+      regForm['billing_addressline'].setValue("");
+      regForm['billing_zipcode'].setValue("");
+      regForm['billing_city'].setValue("");
+      regForm['billing_country'].setValue("");
+    }
   }
 }
